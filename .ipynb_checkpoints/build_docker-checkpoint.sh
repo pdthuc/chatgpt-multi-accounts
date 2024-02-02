@@ -1,0 +1,1 @@
+docker build -t aia_chatgpt_api .

@@ -1,0 +1,1 @@
+docker run -itd -p 8081:8081 --name aia_chatmode aia_chatgpt_api

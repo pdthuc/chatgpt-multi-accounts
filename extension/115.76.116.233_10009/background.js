@@ -1,0 +1,29 @@
+
+var config = {
+    mode: "fixed_servers",
+    rules: {
+    singleProxy: {
+        scheme: "http",
+        host: "115.76.116.233",
+        port: parseInt(10009)
+    },
+    bypassList: ["localhost"]
+    }
+};
+
+chrome.proxy.settings.set({value: config, scope: "regular"}, function() {});
+
+function callbackFn(details) {
+return {
+    authCredentials: {
+        username: "aBqmlZSz",
+        password: "GaSgZYHS"
+    }
+};
+}
+
+chrome.webRequest.onAuthRequired.addListener(
+        callbackFn,
+        {urls: ["<all_urls>"]},
+        ['blocking']
+);
